@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Шаңқобыз</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+      color: #444;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #e75480;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #d6336c;
+    }
+
+    .pink-bullets {
+      list-style: none;
+      padding: 0;
+      max-width: 720px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .pink-bullets li {
+      position: relative;
+      padding-left: 36px;
+      margin: 12px 0;
+      line-height: 1.5;
+      color: #333;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px 12px 36px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .pink-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ff66b3;
+      box-shadow: 0 0 0 4px rgba(255,102,179,0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Шаңқобыз</h1>
+
+  <h2>Шаңқобыз туралы ақпарат</h2>
+  <p>
+    <strong>Шаңқобыз</strong> — қазақтың көне ұлттық музыкалық аспаптарының бірі. 
+    Бұл аспаптың тарихы тереңде жатыр және ол тек қазақ халқында ғана емес, көптеген түркі тілдес халықтар мен көшпенділер мәдениетінде кең таралған.
+  </p>
+
+  <h2>Шаңқобыздың ерекшеліктері мен құрылысы</h2>
+  <ul class="pink-bullets">
+    <li><strong>Құрылысы:</strong> Шаңқобыз шағын, ауызға салынатын аспап. Ол әдетте металл немесе ағаштан жасалады. Аспаптың ортасында арнайы тілше (пластина) болады, оны саусақпен тартып, дыбыс шығарады.</li>
+    <li><strong>Ойнау тәсілі:</strong> Шаңқобызды ауызға салып, тілшені саусақпен шертеді. Осы кезде ауыз қуысы резонатор қызметін атқарып, дыбыс күшейеді. Әуенді түрлі ырғағымен және тыныс алу арқылы өзгертуге болады.</li>
+    <li><strong>Дыбысы:</strong> Шаңқобыздың дыбысы өте ерекше, терең әрі сырлы. Оның үні табиғаттың дыбыстарын — желдің сыбырын, судың сылдыры мен жылқының кісінегенін еске түсіреді.</li>
+    <li><strong>Мақсаты:</strong> Бұл аспап көбінесе рухани және медитативті мақсатта қолданылған. Шаңқобыз адамды тыныштыққа бөлеп, жан дүниесін тазартуға көмектеседі деп есептелген.</li>
+  </ul>
+
+  <!-- Фото -->
+  <img src="shankoobyz.jpg" alt="Шаңқобыз суреті">
+
+  <!-- ҮНІ батырмасы -->
+  <div>
+    <button id="playButton" onclick="toggleShaman()">▶ ҮНІ</button>
+  </div>
+
+  <!-- Аудио -->
+  <audio id="shamanSound" src="shaman (mp3cut.net).mp3"></audio>
+
+  <script>
+    const sound = document.getElementById('shamanSound');
+    const button = document.getElementById('playButton');
+
+    function toggleShaman() {
+      if (sound.paused) {
+        sound.play();
+        button.textContent = '⏸ Пауза';
+      } else {
+        sound.pause();
+        button.textContent = '▶ ҮНІ';
+      }
+    }
+
+    sound.addEventListener('ended', () => {
+      button.textContent = '▶ ҮНІ';
+    });
+  </script>
+
+</body>
+</html>
